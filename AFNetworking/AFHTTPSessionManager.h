@@ -138,6 +138,15 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Making HTTP Requests
 ///---------------------------
 
+- (NSURLSessionDataTask *)dataTaskWithHTTPMethod:(NSString *)method
+                                       URLString:(NSString *)URLString
+                                      parameters:(id)parameters
+                                         headers:(NSDictionary <NSString *, NSString *> *)headers
+                                  uploadProgress:(nullable void (^)(NSProgress *uploadProgress)) uploadProgress
+                                downloadProgress:(nullable void (^)(NSProgress *downloadProgress)) downloadProgress
+                                         success:(void (^)(NSURLSessionDataTask *, id))success
+                                         failure:(void (^)(NSURLSessionDataTask *, NSError *))failure;
+
 /**
  Creates and runs an `NSURLSessionDataTask` with a `GET` request.
 
